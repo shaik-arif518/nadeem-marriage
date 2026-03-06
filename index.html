@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Wedding · cinematic story</title>
+  <!-- main stylesheet (linked seperately as requested) -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body><div id="curtain-container">
+
+<div class="curtain left"></div>
+<div class="curtain right"></div>
+
+<div class="tap-text">Tap Anywhere To Enter ✨</div>
+
+</div>
+  <!-- audio element for background music (autoplay with mute toggle) -->
+  <audio id="bgAudio" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- fixed mute/unmute button (royal style) -->
+  <button class="audio-toggle" id="audioToggle">🔊 unmute</button>
+
+  <!-- main cinematic scroll container -->
+  <div class="film-scroll" id="filmScroll">
+    <!-- 1. OPENING SCENE (cinematic intro) -->
+    <section class="scene" id="scene1">
+  <video class="bg-video" autoplay muted loop poster="/photos/main page.jpg">
+    <source src="https://videos.pexels.com/video-files/2833038/2833038-uhd_3840_2160_30fps.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <!-- floating particles -->
+  <div class="floating-particles">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
+    <div class="particle particle-5"></div>
+  </div>
+
+  <div class="scene-content">
+
+    <div class="names-line hidden-text" id="text1">
+      Together with families…
+    </div>
+
+    <div class="script-names hidden-text" id="text2">
+      Nadeem & Shahina
+    </div>
+
+    <div class="names-line hidden-text" id="text3">
+      invite YOU to celebrate OUR wedding
+    </div>
+
+  </div>
+</section>
+
+    <!-- 2. LOVE STORY (scene transition style) -->
+    <section class="scene bg-love-story" id="scene2">
+      <div class="overlay overlay-love-story"></div>
+      <div class="scene-content content-love-story">
+        <div class="story-text fade-slide-up story-title story-title-color" style="color: black;">— our story —</div>
+        <div class="story-text fade-slide-up story-line-1 story-dark-text" style="color: black;">"A chance encounter that rewrote our stars.",</div>
+        <div class="story-text fade-slide-up story-line-2 story-dark-text" style="color: black;">The Yes That Changed Everything:- </div>
+        <div class="story-text fade-slide-up story-timeline story-dark-text" style="color: black;">"A promise made under the moon, kept in our hearts."</div>
+        <div class="story-text fade-slide-up story-timeline story-dark-text" style="color: black;">♡ 2019 · love at first sight  ♡  2021 · venice proposal  ♡  2026 · wedding</div>
+      </div>
+    </section>
+
+    <!-- 3. WEDDING EVENTS (luxury reveal) -->
+    <section class="scene bg-events" id="scene3">
+      <div class="overlay"></div>
+      <div class="scene-content">
+        <h2 class="script-names title-celebrations">celebrations</h2>
+        <div class="event-grid">
+          <div class="event-card fade-slide-up">✨ HALDI<br>7pm <br>°Home</div>
+          <div class="event-card fade-slide-up">🤲 NIKHA hour<br>12 Noon <br>°KN Function Hall</div>
+          <div class="event-card fade-slide-up">💫 reception<br>7pm <br>°LalJan Basha Hall</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. COUNTDOWN SCENE -->
+    <section class="scene bg-countdown" id="scene4">
+      <div class="royal-scratch-container">
+
+<h2 class="title">Our Wedding Date 💍</h2>
+
+<div class="ring-wrapper" id="ringWrapper">
+    <div class="ring">💖</div>
+    <p>Tap the ring to reveal the dates</p>
+</div>
+
+<div class="scratch-card hidden" id="scratchCard">
+
+    <div class="scratch-hidden">
+        <div class="date-box">
+            <span class="day">10</span>
+            <span class="month">MAY</span>
+            <span class="year">2026</span>
+        </div>
+    </div>
+
+    <canvas id="scratchCanvas"></canvas>
+
+</div>
+
+</div>
+      <div class="overlay overlay-countdown"></div>
+      <div class="scene-content">
+        <div class="script-names title-countdown">countdown to forever</div>
+        <div class="countdown-container" id="countdown">
+          <div class="time-block"><span class="time-number" id="days">67</span><span class="time-label">days</span></div>
+          <div class="time-block"><span class="time-number" id="hours">00</span><span class="time-label">hours</span></div>
+          <div class="time-block"><span class="time-number" id="minutes">00</span><span class="time-label">minutes</span></div>
+          <div class="time-block"><span class="time-number" id="seconds">00</span><span class="time-label">seconds</span></div>
+        </div>
+      </div>
+    </section>
+    <!-- 5. GALLERY SCENE (movie montage) -->
+    <section class="scene bg-gallery" id="scene5">
+      <div class="scene-content">
+        <h2 class="script-names title-moments">· moments ·</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="photos/proposing.jpeg" alt="couple"></div>
+          <div class="gallery-item"><img src="photos/sky hands.jpeg" alt="rings"></div>
+          <div class="gallery-item"><img src="photos/hands holding.jpeg" alt="bride"></div>
+          <div class="gallery-item"><img src="photos/together.jpeg" alt="wedding"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. RSVP SCENE (elegant ending) -->
+    <section class="scene bg-rsvp" id="scene6">
+      <div class="scene-content">
+        <div class="rsvp-form" id="rsvpForm">
+          <h2 class="script-names title-rsvp">RSVP</h2>
+          <p class="rsvp-subtitle">please join us</p>
+          <input class="input-field" type="text" placeholder="your name" id="guestName">
+          <input class="input-field" type="email" placeholder="email">
+          <button class="submit-btn" id="rsvpSubmit">send response</button>
+          <div id="thankyouMessage" class="thank-you-message"></div>
+        </div>
+      </div>
+      
+</section>
+
+<!-- 8. BLESSING SCENE -->
+<section class="scene bg-blessing" id="scene8">
+
+<div class="scene-content blessing-scene">
+
+<h2 class="script-names blessing-title">Bless the Couple</h2>
+
+<div class="couple-stage" id="coupleStage">
+
+<!-- GIRL -->
+<div class="character bride">
+<div class="head"></div>
+<div class="body">S</div>
+</div>
+
+<!-- BOY -->
+<div class="character groom">
+<div class="head"></div>
+<div class="body">N</div>
+</div>
+
+<div id="ringSparkle">💍</div>
+
+</div>
+
+<button class="bless-btn" id="blessButton">Bless Them 💐</button>
+
+</div>
+
+<div id="petals"></div>
+<div id="hearts"></div>
+
+<audio id="weddingMusic" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c8b8fbc5e.mp3">
+</audio>
+
+<style>
+
+/* romantic pastel background */
+
+.bg-blessing{
+background:linear-gradient(135deg,#fff8f5,#ffe4ea,#f5e9ff);
+overflow:hidden;
+position:relative;
+}
+
+/* floral decorations */
+
+.bg-blessing::before{
+content:"🌸 🌷 🌼";
+position:absolute;
+top:10px;
+left:20px;
+font-size:40px;
+opacity:0.4;
+}
+
+.bg-blessing::after{
+content:"🌸 🌹 🌼";
+position:absolute;
+bottom:10px;
+right:20px;
+font-size:40px;
+opacity:0.4;
+}
+
+/* layout */
+
+.blessing-scene{
+text-align:center;
+padding:80px 20px;
+}
+
+.blessing-title{
+font-size:40px;
+color:#7a4b5a;
+margin-bottom:50px;
+}
+
+/* couple stage */
+
+.couple-stage{
+display:flex;
+justify-content:center;
+align-items:flex-end;
+gap:120px;
+height:240px;
+position:relative;
+transition:all 1.2s ease-in-out;
+}
+
+/* characters */
+
+.character{
+display:flex;
+flex-direction:column;
+align-items:center;
+transition:transform 1.2s ease-in-out;
+}
+
+.head{
+width:60px;
+height:60px;
+background:#f6d4c5;
+border-radius:50%;
+}
+
+.body{
+width:90px;
+height:120px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:36px;
+font-weight:bold;
+border-radius:30px;
+margin-top:-10px;
+}
+
+/* bride style */
+
+.bride .body{
+background:#fff0f3;
+color:#d47a8c;
+}
+
+/* groom style */
+
+.groom .body{
+background:#2f3e46;
+color:#ffd700;
+}
+
+/* hug movement */
+
+.hug .bride{
+transform:translateX(65px);
+}
+
+.hug .groom{
+transform:translateX(-65px);
+}
+
+/* glow when hugging */
+
+.hug{
+filter:drop-shadow(0 0 25px rgba(255,182,193,0.9));
+}
+
+/* button */
+
+.bless-btn{
+margin-top:40px;
+padding:15px 32px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:#e7a6b3;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+.bless-btn:hover{
+background:#d88999;
+transform:scale(1.08);
+}
+
+/* hearts */
+
+.heart{
+position:absolute;
+font-size:22px;
+animation:float 3s ease-out forwards;
+}
+
+@keyframes float{
+0%{opacity:0; transform:translateY(0)}
+50%{opacity:1}
+100%{transform:translateY(-200px); opacity:0}
+}
+
+/* sakura petals */
+
+.petal{
+position:absolute;
+top:-20px;
+font-size:18px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(120vh) rotate(360deg);
+opacity:0.8;
+}
+}
+
+/* ring sparkle */
+
+#ringSparkle{
+position:absolute;
+top:80px;
+font-size:28px;
+opacity:0;
+}
+
+.ring-show{
+animation:ringPop 2s forwards;
+}
+
+@keyframes ringPop{
+0%{opacity:0; transform:scale(0.5)}
+40%{opacity:1; transform:scale(1.5)}
+100%{opacity:0}
+}
+
+</style>
+
+<script>
+
+const blessBtn=document.getElementById("blessButton");
+const stage=document.getElementById("coupleStage");
+const petals=document.getElementById("petals");
+const hearts=document.getElementById("hearts");
+const ring=document.getElementById("ringSparkle");
+const music=document.getElementById("weddingMusic");
+
+blessBtn.addEventListener("click",()=>{
+
+stage.classList.add("hug");
+music.play();
+
+flowerRain();
+heartBurst();
+
+setTimeout(()=>{
+ring.classList.add("ring-show");
+},1200);
+
+blessBtn.textContent="Blessings Received ❤️";
+blessBtn.disabled=true;
+
+});
+
+/* more flowers falling */
+
+function flowerRain(){
+
+for(let i=0;i<80;i++){
+
+let petal=document.createElement("div");
+petal.className="petal";
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+petal.style.animationDuration=(4+Math.random()*4)+"s";
+
+petals.appendChild(petal);
+
+setTimeout(()=>petal.remove(),9000);
+
+}
+
+}
+
+/* hearts */
+
+function heartBurst(){
+
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+heart.style.bottom="20px";
+
+hearts.appendChild(heart);
+
+setTimeout(()=>heart.remove(),3000);
+
+}
+
+}
+
+</script>
+
+</section>
+```
+
+
+    <!-- 7. FINAL SCENE (closing frame) -->
+    <section class="scene bg-closing" id="scene7">
+      <div class="overlay"></div>
+      <div class="scene-content">
+        <div class="script-names final-title">Nadeem & Shahina</div>
+        <div class="names-line final-subtitle">      </div>
+        <div class="final-tagline" style="color: black;"># foreverlove</div>
+      </div>
+    </section>
+  </div>
+  
+
+  <!-- separate JavaScript file (linked) -->
+  <script src="script.js"></script>
+</body>
+</html>
